@@ -1,3 +1,5 @@
+//добавил методы доступа, типизацию вывода функций и конструктор в Customer
+
 class Order {
   private customer: Customer;
 
@@ -5,7 +7,7 @@ class Order {
     this.customer = new Customer();
   }
 
-  getTotalPrice(): number {
+ public  getTotalPrice(): number {
     return this.customer.calculateTotalPrice();
   }
 }
@@ -13,7 +15,11 @@ class Order {
 class Customer {
   private items: Item[];
 
-  calculateTotalPrice(): number {
+  constructor (items:Item[]){
+    this.items=items
+  }
+  
+  protected calculateTotalPrice(items): number {
     // вычисление общей цены на основе items
   }
 }

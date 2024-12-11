@@ -1,9 +1,18 @@
-const pay = () => {
-  for (let e of employees) {
-    if (e.isPayday()) {
-      const pay = e.calculatePay();
+//добавил тип Elem и обработку 
+type TElem = {
+  isPayday():boolean;
+  calculatePay():any;
+  deliverPay(pay:any):void;
+}
 
-      e.deliverPay(pay);
+const pay = (employees: TElem[]):void => {
+  for (let elem of employees) {
+    if (elem.isPayday()) {
+      const pay = elem.calculatePay();
+
+      elem.deliverPay(pay);
+    }else{
+      console.log("Not payday")
     }
   }
 };
