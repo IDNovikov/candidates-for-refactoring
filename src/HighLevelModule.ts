@@ -1,5 +1,6 @@
+//только добавил методы доступа и типизировал выводы
 class LowLevelModule {
-  doSomething() {
+  public doSomething():void {
     // реализация
   }
 }
@@ -11,7 +12,7 @@ class HighLevelModule {
     this.lowLevelModule = new LowLevelModule(); // создание экземпляра
   }
 
-  doSomethingElse() {
+  public doSomethingElse():void {
     this.lowLevelModule.doSomething(); // использование непосредственной зависимости
   }
 }

@@ -1,24 +1,31 @@
+//в прошлом коде нарушен принцип инкапусляции логики. 
 class A {
-  // ...
-  getB() {
-    return new B();
+//..
+  doSomething() {
+    this.b.doSomething();
   }
 }
 
 class B {
-  // ...
-  getC() {
-    return new C();
+//..
+  doSomething() {
+    this.c.doSomething();
   }
 }
 
 class C {
-  // ...
+  
   doSomething() {
     // Логика
   }
 }
 
-// Использование транзитивного обращения
-const a = new A();
-a.getB().getC().doSomething();
+//инициализируем классы и наследуем логику 
+const c = new C()
+const b = new B(c);
+const a = new A(b)
+
+//получаем наш метод
+a.doSomething()
+
+

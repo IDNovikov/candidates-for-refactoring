@@ -1,14 +1,12 @@
-const render = (size: number) => {
-  const html = new StringBuffer('<hr');
+//сделал построение строки через шаблонные строки 
+const render = (size: number): string => {
+  let html = '<hr';
 
   if (size > 0) {
-    html
-      .append(' size="')
-      .append(size + 1)
-      .append('"');
+    html += ` size="${size + 1}"`;
   }
 
-  html.append('>');
+  html += '>';
 
-  return html.toString();
+  return html;
 };

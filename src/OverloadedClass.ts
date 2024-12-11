@@ -1,3 +1,4 @@
+//сложночитаемый класс, лучше как-то разделять логику
 class OverloadedClass {
   field1: number;
   field2: string;
